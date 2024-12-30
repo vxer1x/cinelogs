@@ -1,0 +1,117 @@
+body {
+    background-color: #FFF6E9;
+    margin: 0;
+    font-family: monospace;
+    color: black;
+}
+
+.LatestMoviescomp {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 10px;
+    width: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    justify-content: center;
+    align-items: center;
+}
+
+.poster {
+    background-color: #F0BB78;
+    padding: 5px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    flex-shrink: 0;
+    width: 17rem;
+    height: 27rem;
+    scroll-snap-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.poster img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+    display: block;
+}
+
+.poster:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+}
+
+@media (orientation: landscape) {
+    .LatestMoviescomp {
+        justify-content: center;
+        overflow-x: hidden;
+    }
+}
+
+@media (orientation: portrait) {
+    .LatestMoviescomp {
+        justify-content: flex-start;
+        overflow-x: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .poster {
+        width: 16rem;
+        height: 22rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .poster {
+        width: 14rem;
+        height: 20rem;
+    }
+}
+
+.NavBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+.Logo {
+    color: #543A14;
+    padding-left: 25px;
+    font-size: 2rem;
+}
+
+.SearchBar {
+    padding: 0.7rem;
+    padding-left: 1rem;
+    margin-right: 25px;
+    border-radius: 25px;
+    border-width: 1.5px;
+    border-color: #543A14;
+    border-style: solid;
+    font-family: monospace;
+}
+
+p
+{
+    color: #F0BB78;    
+}
+
+.TopMov h1
+{
+    color: #543A14;
+    font-size: 1.5rem;
+}
+.TopMov p
+{
+    font-size: clamp(1rem, 1.5vw, 2rem);
+}

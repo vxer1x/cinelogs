@@ -1,0 +1,26 @@
+body {
+    background-color: #FFF6E9;
+    margin: 0;
+    font-family: monospace;
+    text-align: center;
+}
+
+.TrendingMovies {
+    color: #543A14;
+}
+
+
+.records {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap to the next row */
+    gap: 16px; /* Space between items */
+    justify-content: space-evenly; /* Distribute items evenly across rows */
+    padding: 16px; /* Optional: Padding around the container */
+}
+
+.TopMov {
+    flex: 1 1 400px; /* Minimum width of 300px for each item */
+    max-width: 400px; /* Ensures the width doesn't exceed 300px */
+    box-sizing: border-box; /* Include padding and borders in size calculations */
+    text-align: center; /* Center-align the text */
+}

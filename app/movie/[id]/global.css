@@ -1,0 +1,52 @@
+.container {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    padding: 1rem;
+    flex-wrap: wrap;
+}
+
+.container img {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 17rem;
+    height: 27rem;
+    border-radius: 8px;
+}
+
+.movie-details {
+    text-align: left;
+}
+
+h1 {
+    color: #543A14;
+    font-size: 2rem;
+}
+
+.movie-details p {
+    font-size: 1.3rem;
+}
+
+/* Media Query for screens less than 700px */
+@media (max-width: 700px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .container img {
+        margin-bottom: 1rem;
+    }
+
+    .movie-details {
+        text-align: center;
+    }
+
+    .movie-details p {
+        font-size: 1.1rem;
+    }
+}
