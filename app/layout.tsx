@@ -32,7 +32,7 @@ export default function RootLayout({
         />
 
         {/* Profitable CPM Script 1 */}
-        <Script
+        {/* <Script
           id="profitable-cpm-script-1"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
@@ -46,14 +46,14 @@ export default function RootLayout({
               })();
             `,
           }}
-        />
+        />*/ }
 
         {/* Profitable CPM Script 2 */}
-        <Script
+        {/*<Script
           id="profitable-cpm-script-2"
           strategy="afterInteractive"
           src="//pl25436314.profitablecpmrate.com/5f/65/a2/5f65a2eb181e5ec4c3295bc6ec1059a5.js"
-        />
+        /> */ }
       </head>
       <body>
         {children}
