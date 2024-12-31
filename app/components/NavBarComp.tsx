@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import './global.css'
 
+import SearchBar from './SearchBarComp';
+
 
 async function NavBarComponent() {
     return (
@@ -9,7 +11,7 @@ async function NavBarComponent() {
             <h1 className="Logotitle">🍿vxer.info</h1>
             </Link>
             
-            <input type="text" className="SearchBar" placeholder="Search..."/>
+            <SearchBar/>
         </div>
     );
 }

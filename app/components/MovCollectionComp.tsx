@@ -25,8 +25,6 @@ const MovieCollectionComponent = () => {
           sort: '', // Fetch without sorting since we'll sort in code
         });
 
-        console.log(movies); // Log the raw response to inspect the structure
-
         const sortedMovies = movies
           .map((item: any) => {
             // Directly access the properties of the item
@@ -43,7 +41,6 @@ const MovieCollectionComponent = () => {
           .sort((a: Movie, b: Movie) => b.collection - a.collection) // Sort by 'collection' descending
           .slice(0, 5); // Take the top 5
 
-        console.log(sortedMovies); // Log the sorted movies
         setTopMovies(sortedMovies);
         setLoading(false);
       } catch (error) {

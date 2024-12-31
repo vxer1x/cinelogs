@@ -1,0 +1,39 @@
+a {
+    text-decoration: none;
+}
+
+.SearchResults {
+    color: #543A14;
+}
+
+.SearchMovieDetails {
+    color: #F0BB78;
+    text-align: left;
+}
+
+.SearchMovieCards {
+    display: flex; /* Use Flexbox for layout */
+    flex-wrap: wrap; /* Allow items to wrap to the next row */
+    justify-content: center; /* Center the cards horizontally */
+    gap: 1.5rem; /* Add spacing between cards */
+    padding: 1rem; /* Add some padding around the container */
+}
+
+.SearchMovieCard {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    flex-wrap: wrap;
+}
+
+.SearchMovieCard img {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 13rem;
+    height: 20rem;
+    border-radius: 8px;
+}
