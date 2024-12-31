@@ -31,6 +31,7 @@ const SearchPage = async ({ params }: SearchPageProps) => {
 
     return (
       <div>
+        <div id="container-43a840255258a1fd2fd22af5493a9b84"></div>
         <NavBarComponent />
         <h1 className='SearchResults'>Search Results for: {searchQuery}</h1>
         <div className='SearchMovieCards'>

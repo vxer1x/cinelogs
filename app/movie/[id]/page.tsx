@@ -18,6 +18,7 @@ const MoviePage = async ({ params }: MoviePageProps) => {
 
     return (
       <div>
+        <div id="container-43a840255258a1fd2fd22af5493a9b84"></div>
         <NavBarComponent />
         
         <h1>{movie.title}</h1>
