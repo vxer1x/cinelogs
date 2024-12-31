@@ -84,7 +84,17 @@ a {
     text-decoration: none;
 }
 
-.Logo {
+.NavBar a {
+    display: flex;
+    align-items: center;
+}
+
+.NavBar img {
+    width: 2rem;
+    margin-left: 1rem;
+}
+
+.Logotitle {
     color: #543A14;
     padding-left: 25px;
     font-size: 2rem;
