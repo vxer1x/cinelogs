@@ -1,6 +1,5 @@
 import './global.css';
 import Script from 'next/script';
-import { useEffect } from 'react';
 
 // app/layout.tsx
 export const metadata = {
@@ -13,20 +12,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  // Register the PropellerAds service worker
-  useEffect(() => {
-    if (typeof window !== 'undefined' && 'serviceWorker' in navigator) {
-      navigator.serviceWorker
-        .register('/sw.js')
-        .then((registration) => {
-          console.log('PropellerAds Service Worker registered:', registration.scope);
-        })
-        .catch((error) => {
-          console.error('Service Worker registration failed:', error);
-        });
-    }
-  }, []);
-
   return (
     <html lang="en">
       <head>
@@ -44,6 +29,26 @@ export default function RootLayout({
           strategy="afterInteractive"
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4613964821229195"
           crossOrigin="anonymous"
+        />
+
+        {/* Service Worker Registration */}
+        <Script
+          id="service-worker-registration"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              if ('serviceWorker' in navigator) {
+                navigator.serviceWorker
+                  .register('/sw.js')
+                  .then(function (registration) {
+                    console.log('Service Worker registered with scope:', registration.scope);
+                  })
+                  .catch(function (error) {
+                    console.error('Service Worker registration failed:', error);
+                  });
+              }
+            `,
+          }}
         />
       </head>
       <body>
