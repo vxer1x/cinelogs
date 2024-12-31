@@ -31,6 +31,26 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
 
+        {/* Monetag Script */}
+        <Script
+          id="monetag-script"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                var m = document.createElement('script');
+                m.type = 'text/javascript';
+                m.async = true;
+                m.src = 'https://alwingulla.com/88/tag.min.js';
+                m.setAttribute('data-zone', '122639');
+                m.setAttribute('data-cfasync', 'false');
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(m, s);
+              })();
+            `,
+          }}
+        />
+
         {/* Service Worker Registration */}
         <Script
           id="service-worker-registration"
