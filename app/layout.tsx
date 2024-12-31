@@ -1,5 +1,6 @@
 import './global.css';
 import Script from 'next/script';
+import { useEffect } from 'react';
 
 // app/layout.tsx
 export const metadata = {
@@ -12,6 +13,20 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  // Register the PropellerAds service worker
+  useEffect(() => {
+    if (typeof window !== 'undefined' && 'serviceWorker' in navigator) {
+      navigator.serviceWorker
+        .register('/sw.js')
+        .then((registration) => {
+          console.log('PropellerAds Service Worker registered:', registration.scope);
+        })
+        .catch((error) => {
+          console.error('Service Worker registration failed:', error);
+        });
+    }
+  }, []);
+
   return (
     <html lang="en">
       <head>
@@ -19,10 +34,10 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content="Indian Movies Info." />
         <meta name="author" content="vxer.info" />
-        
+
         {/* Favicon */}
         <link rel="icon" href="/popcorn.png" type="image/png" />
-        
+
         {/* Google AdSense */}
         <Script
           id="adsense-script"
