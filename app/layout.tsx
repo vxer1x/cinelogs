@@ -30,6 +30,23 @@ export default function RootLayout({
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4613964821229195"
           crossOrigin="anonymous"
         />
+
+        {/* Profitable CPM Script */}
+        <Script
+          id="profitable-cpm-script"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                var s = document.createElement('script');
+                s.async = true;
+                s.src = "//pl25436277.profitablecpmrate.com/43a840255258a1fd2fd22af5493a9b84/invoke.js";
+                s.setAttribute('data-cfasync', 'false');
+                document.head.appendChild(s);
+              })();
+            `,
+          }}
+        />
       </head>
       <body>
         {children}

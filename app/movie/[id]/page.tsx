@@ -33,7 +33,7 @@ const MoviePage = async ({ params }: MoviePageProps) => {
             <p><strong>Collection: </strong>{movie.collection}</p>
           </div>
         </div>
-
+        <div id="container-43a840255258a1fd2fd22af5493a9b84"></div>
       </div>
     );
   } catch (error) {
