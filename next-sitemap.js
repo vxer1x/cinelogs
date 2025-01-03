@@ -1,7 +1,7 @@
 // next-sitemap.js
 const PocketBase = require('pocketbase'); // Import PocketBase client
 
-const pb = new PocketBase('https://your-pocketbase-host.pockethost.io'); // Replace with your PocketBase URL
+const pb = new PocketBase('https://vxer.pockethost.io'); // Replace with your PocketBase URL
 
 module.exports = {
   siteUrl: 'https://vxer.info', // Your site URL
@@ -9,6 +9,7 @@ module.exports = {
   sitemapSize: 7000, // Optional: Max number of URLs per sitemap file
   changefreq: 'daily', // Optional: Frequency of updates
   priority: 0.7, // Optional: Default priority for pages
+  outdir: './public',
   transform: async (config, path) => {
     // If you have dynamic routes like /movie/[id], you need to add logic to handle them
     if (path.startsWith('/movie/')) {
